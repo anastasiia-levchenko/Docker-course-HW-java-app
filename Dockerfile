@@ -29,12 +29,12 @@ RUN apt-get update && apt-get install -y default-jdk maven
 
 # ADD a directory called docker-git-hello-world inside the UBUNTU IMAGE where you will be moving all of these files under this
 # DIRECTORY to
-ADD . /usr/local/docker-hw
+ADD . /usr/local/docker-course-ping-java-app
 
 # AFTER YOU HAVE MOVED ALL THE FILES GO AHEAD CD into the directory and run mvn assembly.
 # Maven assembly will package the project into a JAR FILE whidocker-git-hello-woch can be executed
-RUN cd /usr/local/docker-hw && mvn assembly:assembly
+RUN cd /usr/local/docker-course-ping-java-app && mvn assembly:assembly
 
 #THE CMD COMMAND tells docker the command to run when the container is started up from the image. In this case we are
 # executing the java program as is to print Hello World.
-CMD ["java", "-cp", "/usr/local/docker-hw/target/docker-hw-0.0.1-SNAPSHOT-jar-with-dependencies.jar", "com.al.docker.HelloWorldPing"]
+CMD ["java", "-cp", "/usr/local/docker-course-ping-java-app/target/docker-course-ping-java-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar", "com.al.docker.HelloWorldPing"]
